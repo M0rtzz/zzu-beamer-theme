@@ -1,0 +1,97 @@
+\usepackage[T1]{fontenc}
+\usepackage[fontset=none]{ctex}
+\usepackage[AutoFakeSlant]{xeCJK}
+\xeCJKsetup{SlantFactor = 0.2}
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage[square,comma,sort&compress,numbers]{natbib}
+\usepackage{
+    svg,
+    xurl,
+    ulem,
+    xpatch,
+    amsmath,
+    caption,
+    booktabs,
+    calligra,
+    hyperref,
+    graphicx,
+    listings,
+    pstricks,
+} 
+\usepackage{ZZU}
+\usepackage{xelatexemoji}
+\usepackage{newunicodechar}
+\newunicodechar{️}{}
+
+\renewcommand{\bibsection}{} % 禁止自动创建 `参考文献` section
+\newcommand{\temp}[1]{\textcolor{blue}{\uline{\color{blue}#1}}}
+\newcommand{\blueurl}[2][blue]{\href{#2}{\temp{#2}}}
+
+\setCJKmainfont{SimHei}[
+    UprightFont = simhei.ttf,
+    BoldFont = simhei-bold.ttf,
+    Path = fonts/
+]
+\setCJKsansfont{SimHei}[
+    UprightFont = simhei.ttf,
+    BoldFont = simhei-bold.ttf,
+    Path = fonts/
+]
+\setCJKmonofont{SimHei}[
+    UprightFont = simhei.ttf,
+    BoldFont = simhei-bold.ttf,
+    Path = fonts/
+]
+\newCJKfontfamily\wuyushengxingkai{wuyushengxingkai}[
+    UprightFont = 吴玉生行楷.ttf,
+    Path = fonts/
+]
+\setmainfont{Times New Roman}[
+    UprightFont = times.ttf,
+    BoldFont = timesbd.ttf,
+    ItalicFont = timesi.ttf,
+    BoldItalicFont = timesbi.ttf,
+    Path = fonts/
+]
+\setsansfont{Times New Roman}[
+    UprightFont = times.ttf,
+    BoldFont = timesbd.ttf,
+    ItalicFont = timesi.ttf,
+    BoldItalicFont = timesbi.ttf,
+    Path = fonts/
+]
+\setromanfont{Times New Roman}[
+    UprightFont = times.ttf,
+    BoldFont = timesbd.ttf,
+    ItalicFont = timesi.ttf,
+    BoldItalicFont = timesbi.ttf,
+    Path = fonts/
+]
+\setmonofont{FiraCode}[
+    UprightFont = FiraCode-Regular.ttf,
+    BoldFont = FiraCode-Bold.ttf,
+    ItalicFont = FiraCode-Italic.otf,
+    BoldItalicFont = FiraCode-BoldItalic.otf,
+    Path = fonts/
+]
+
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
