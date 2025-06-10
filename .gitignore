@@ -1,4 +1,5 @@
 .cz-config.js
+*:Zone.Identifier
 
 papers/pdf/*
 !papers/pdf/.gitkeep
