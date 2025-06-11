@@ -13,7 +13,7 @@ BIB_EXISTS = $(wildcard *.bib)
 all: $(PDF)
 
 $(PDF): $(MAIN) $(PREAMBLE) $(SRC_FILES) $(STY)
-	$(RM) $@
+	$(if $(wildcard $@), $(RM) $@,)
 	$(XELATEX) $(MAIN)
 ifneq ($(BIB_EXISTS),)
 	$(BIBTEX) $(basename $(MAIN)).aux
