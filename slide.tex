@@ -1,0 +1,91 @@
+% !TEX program = XeLaTeX
+% !TEX encoding = UTF-8
+% @brief: 郑州大学Beamer模板
+% @author: M0rtzz
+% @reference: https://github.com/tuna/THU-Beamer-Theme
+% @date: 2025-06-14
+
+\DocumentMetadata{lang=zh}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[UTF8]{beamer}
+\input{preamble}
+
+\title{基于XX机制增强的XX算法}
+\subtitle{
+    \scriptsize
+    指导老师：M0rtzzGod\scriptsize\textit{$^{@ZZUCSAI}$}
+}
+\newcommand{\myname}{M0rtzz}
+\author{
+    \protect
+    \begin{tabular}{l}
+        姓名：\myname\\
+        专业：计算机科学与技术\\
+        学号：9527
+        \protect
+    \end{tabular}
+}
+\institute{郑州大学计算机与人工智能学院}
+\date{XXXX年XX月XX日}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[
+        sectionstyle=show,
+        subsectionstyle=show/shaded/hide,
+        subsubsectionstyle=show/shaded/hide
+    ]
+\end{frame}
+
+\section{研究背景与意义}
+
+\input{src/研究背景与意义}
+
+\section{研究现状}
+
+\subsection{相关工作}
+
+\input{src/相关工作}
+
+\subsection{存在问题}
+
+\input{src/存在问题}
+
+\section{研究内容}
+
+\subsection{主要贡献}
+
+\input{src/主要贡献}
+
+\subsubsection{构建XX框架 \& 设计XX模型}
+
+\input{src/构建XX框架}
+
+\input{src/设计XX模型}
+
+\subsubsection{开发全栈式算法实验平台并开源}
+
+\input{src/开发全栈式算法实验平台并开源}
+
+\subsubsection{创建多维验证体系}
+
+\input{src/创建多维验证体系}
+
+\section{总结与展望}
+
+\input{src/总结与展望}
+
+\section{在读期间科研与竞赛成果}
+
+\input{src/在读期间科研与竞赛成果}
+
+\section{References}
+
+\input{src/References}
+
+\end{document}
