@@ -20,13 +20,13 @@ make
 
 ## 模板
 
-由于Overleaf官方免费版的编译时长限制过短，故提供[中国科技云Overleaf模板](https://template-sharelatex.cstcloud.cn/templateDesc/684d574b3425935175b26df8)，根据链接内项目的文件树进行准备即可。
+由于Overleaf官方免费版的编译时长限制过短，故提供[中国科技云Overleaf模板](https://template-sharelatex.cstcloud.cn/templateDesc/684e42ac2f021b517f8953c8)，根据链接内项目的文件树进行准备即可。
 
-![image-20250614190503661](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:14/19:05:03_image-20250614190503661.png)
+![image-20250615115311213](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:15/11:53:11_image-20250615115311213.png)
 
 如果你注册不了中国科技云账号，可使用[鄙人自行搭建的Overleaf（注册需要`*.edu.cn`邮箱且稳定性及速度不如中国科技云）](https://latex.m0rtzz.com/template/684d77651f36ba61d78abb04)。
 
-![image-20250614212237741](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:14/21:22:37_image-20250614212237741.png)
+![image-20250615115326736](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:15/11:53:26_image-20250615115326736.png)
 
 ### 一些注意事项
 
