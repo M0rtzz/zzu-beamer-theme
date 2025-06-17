@@ -26,7 +26,7 @@ make
 
 如果你注册不了中国科技云账号，可使用[鄙人自行搭建的Overleaf（注册需要`*.edu.cn`邮箱且稳定性及速度不如中国科技云）](https://latex.m0rtzz.com/template/684d77651f36ba61d78abb04)。
 
-![image-20250615115326736](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:15/11:53:26_image-20250615115326736.png)
+![image-20250617130955023](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:17/13:10:02_image-20250617130955023.png)
 
 ### 一些注意事项
 
