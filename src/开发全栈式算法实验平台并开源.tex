@@ -8,6 +8,7 @@
 
 \begin{frame}{排版举例}
     \begin{exampleblock}{无编号公式}
+        \small
         \begin{equation*}
             J(\theta) = \mathbb{E}_{\pi_\theta}[G_t] = \sum_{s\in\mathcal{S}} d^\pi (s)V^\pi(s)=\sum_{s\in\mathcal{S}} d^\pi(s)\sum_{a\in\mathcal{A}}\pi_\theta(a|s)Q^\pi(s,a)
         \end{equation*}
@@ -127,4 +128,34 @@
         \includegraphics[width=0.2\linewidth]{images/templates/ZZU_LOGO.eps}
         \caption{这个校徽就是矢量图}
     \end{figure}
+\end{frame}
+
+\begin{frame}{树状图}
+    \begin{adjustbox}{width=\linewidth,center}
+        \begin{forest}
+            [LCLM
+                [How to obtain effective and efficient LCLMs?
+                    [Data
+                        [Pre-training Data
+                            [Data Filtering, selected]
+                            [Data Mixture]
+                            [Data Synthesis]
+                        ]
+                        [Post-training Data]
+                    ]
+                    [Architecture]
+                    [Workflow Design]
+                ]
+                [How to train and deploy LCLMs efficiently?]
+                [How to evaluate and analyze LCLMs comprehensively?]
+                [Application]
+            ]
+        \end{forest}
+    \end{adjustbox}
+\end{frame}
+
+\begin{frame}{引用块}
+    \begin{tcolorbox}[zzubox, title=标题]
+        这是一个引用块。
+    \end{tcolorbox}
 \end{frame}

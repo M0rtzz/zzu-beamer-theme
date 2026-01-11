@@ -1,14 +1,26 @@
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage[fontset=none]{ctex}
-\usepackage[AutoFakeSlant]{xeCJK}
+\usepackage[AutoFakeBold, AutoFakeSlant]{xeCJK}
 \AddToHook{package/xeCJK/after}{\defaultCJKfontfeatures{}}
-\xeCJKsetup{SlantFactor = 0.2}
+\xeCJKsetup{SlantFactor=0.2}
 \usepackage[dvipsnames, svgnames, x11names]{xcolor}
-\usepackage[square,comma,sort&compress,numbers]{natbib}
+\usepackage[comma, numbers, sort&compress, square]{natbib}
+\usepackage{minted}
+\usemintedstyle{manni}
+\setminted{
+    breaklines=true, % 自动换行
+    breakautoindent=false, % 换行不保持缩进
+    frame = single, % 添加单线边框
+    fontsize=\footnotesize, % 10pt 字体
+    linenos, % 启用行号显示
+    numbersep=5pt, % 行号间距 5pt
+    tabsize=4 % 制表符为 4 空格
+}
 \usepackage{
     svg,
     xurl,
     ulem,
+    forest,
     xpatch,
     amsmath,
     caption,
@@ -18,7 +30,15 @@
     graphicx,
     listings,
     pstricks,
-} 
+    tabularx,
+    adjustbox,
+    tcolorbox,
+    xltabular,
+}
+\usepackage{unicode-math} % 加载现代数学字体引擎，支持 Unicode 数学符号和 OpenType 数学字体
+\setmathfont{TeX Gyre Termes Math} % 设置主数学字体，sudo apt install fonts-texgyre-math
+\AtBeginDocument{\renewcommand{\mathbf}{\symbf}} % 重定义 \mathbf 为数学粗体命令，避免回退到文本粗体字体
+\allowdisplaybreaks
 \usepackage{ZZU}
 \usepackage{xelatexemoji}
 \usepackage{newunicodechar}
@@ -96,3 +116,42 @@
 
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
+
+\forestset{
+    default preamble={
+        for tree={
+            grow=south,
+            parent anchor=south,
+            child anchor=north,
+            fit=band,
+            % s sep=0.8em, % sibling separation
+            % l sep=2.5em, % level separation
+            edge={-stealth},
+            font=\sffamily\small,
+            text centered,
+            draw,
+            rounded corners=3pt,
+            edge path={
+                \noexpand\path[\forestoption{edge}]
+                (\forestOve{\forestove{@parent}}{name}.south) --
+                (\forestove{name}.north);
+            },
+        },
+    },
+    selected/.style={
+        fill=zzu,
+        text=white,
+        thick,
+    },
+}
+
+\tcbset{zzubox/.style={
+        colback=zzu!5,
+        colframe=zzu,
+        coltitle=white,
+        colbacktitle=zzu,
+        fonttitle=\bfseries,
+        left=1mm, right=1mm, top=1mm, bottom=1mm,
+        boxrule=0.8pt,
+        arc=2pt
+}}
