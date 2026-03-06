@@ -20,7 +20,7 @@ make
 
 ## 模板
 
-由于Overleaf官方免费版的编译时长限制过短，故提供[中国科技云Overleaf模板](https://template-sharelatex.cstcloud.cn/templateDesc/69a8e60e3425935175b35435)，根据链接内项目的文件树进行准备即可。
+由于Overleaf官方免费版的编译时长限制过短，故提供[中国科技云Overleaf模板](https://template-sharelatex.cstcloud.cn/templateDesc/69aaeb272f021b517f8a3a5a)，根据链接内项目的文件树进行准备即可。
 
 ![image-20250711175448412](https://static.m0rtzz.com/images/Year:2025/Month:07/Day:11/17:54:55_image-20250711175448412.png)
 
