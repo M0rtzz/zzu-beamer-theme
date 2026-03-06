@@ -109,17 +109,20 @@ sudo cpanm Log::Dispatch
 安装`tex-fmt`：
 
 ```bash
-sudo apt install -y cargo && \
+sudo apt install -y cargo rustup && \
+rustup update stable && \
+rustup default stable && \
 mkdir -p ${HOME}/.cargo && \
-sudo tee ${HOME}/.cargo/config.toml > /dev/null << EOF
+tee ${HOME}/.cargo/config.toml > /dev/null << EOF
 [source.crates-io]
 replace-with = 'hustmirror'
 
 [source.hustmirror]
 registry = "sparse+https://mirrors.hust.edu.cn/crates.io-index/"
 EOF
-sudo cargo install tex-fmt && \
-echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
+cargo install tex-fmt && \
+sudo cp /home/m0rtzz/.cargo/bin/tex-fmt /usr/local/bin && \
+sudo chmod +x /usr/local/bin/tex-fmt
 ```
 
 打开VSCode，点击侧边栏插件按钮，搜索`LaTeX`，安装下图两个插件：
@@ -152,31 +155,46 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
     ]
   },
   {
+    "name": "lualatex",
+    "tools": [
+      "lualatex"
+    ]
+  },
+  {
     "name": "latexmk",
     "tools": [
       "latexmk"
     ]
   },
   {
-    "name": "xelatex -> bibtex -> xelatex*2",
+     "name": "pdflatex -> bibtex -> pdflatex * 2",
+    "tools": [
+      "pdflatex",
+      "bibtex",
+      "pdflatex",
+      "pdflatex"
+    ]
+  },
+  {
+    "name": "xelatex -> bibtex -> xelatex * 2",
     "tools": [
       "xelatex",
       "bibtex",
       "xelatex",
       "xelatex"
     ]
-  }
+  },
 ],
 "latex-workshop.latex.tools": [
   {
-    "name": "latexmk",
-    "command": "latexmk",
+    "name": "pdflatex",
+    "command": "pdflatex",
     "args": [
       "--shell-escape",
       "-synctex=1",
       "-interaction=nonstopmode",
       "-file-line-error",
-      "-pdf",
+      "-halt-on-error",
       "%DOC%"
     ]
   },
@@ -188,17 +206,32 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
       "-synctex=1",
       "-interaction=nonstopmode",
       "-file-line-error",
+      "-halt-on-error",
       "%DOC%"
     ]
   },
   {
-    "name": "pdflatex",
-    "command": "pdflatex",
+    "name": "lualatex",
+    "command": "lualatex",
     "args": [
       "--shell-escape",
       "-synctex=1",
       "-interaction=nonstopmode",
       "-file-line-error",
+      "-halt-on-error",
+      "%DOC%"
+    ]
+  },
+  {
+    "name": "latexmk",
+    "command": "latexmk",
+    "args": [
+      "--shell-escape",
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "-halt-on-error",
+      "-pdf",
       "%DOC%"
     ]
   },
@@ -216,6 +249,7 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
   "*.alg",
   "*.aux",
   "*.bbl",
+  "*.bcf",
   "*.blg",
   "*.fdb_latexmk",
   "*.fls",
@@ -233,11 +267,13 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
   "*.pdfsync",
   "*.pre",
   "*.rubbercache",
+  "*.run.xml",
   "*.snm",
   "*.synctex",
   "*.synctex(busy)",
   "*.synctex.gz",
   "*.synctex.gz(busy)",
+  "*.thm",
   "*.toc",
   "*.vrb"
 ],
@@ -267,8 +303,8 @@ echo 'export PATH=${PATH}:${HOME}/.cargo/bin' >> ~/.bashrc
 "latex-workshop.formatting.latex": "tex-fmt",
 // "tex-fmt"参数
 "latex-workshop.formatting.tex-fmt.args": [
-  "--keep",
-  "--tab=4"
+  "--nowrap",
+  "--tabsize=4"
 ]
 ```
 
