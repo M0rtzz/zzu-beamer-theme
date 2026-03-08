@@ -26,7 +26,7 @@ endif
 endif
 
 clean:
-	$(RM) *.aux *.bbl *.blg *.log *.nav *.out *.snm svg-inkscape/ *.synctex.gz '*.synctex(busy)' *.toc *.vrb
+	$(RM) *.aux *.bbl *.blg *.log _minted/ *.nav *.out *.snm svg-inkscape/ *.synctex.gz '*.synctex(busy)' *.toc *.vrb
 
 distclean: clean
 	$(RM) $(PDF)
