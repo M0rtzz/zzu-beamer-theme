@@ -5,9 +5,6 @@
 \makeatother
 \usepackage{fontspec}
 \usepackage[fontset=none]{ctex}
-\usepackage[AutoFakeBold, AutoFakeSlant]{xeCJK}
-\AddToHook{package/xeCJK/after}{\defaultCJKfontfeatures{}}
-\xeCJKsetup{SlantFactor=0.2}
 \usepackage[dvipsnames, svgnames, x11names]{xcolor}
 \usepackage[comma, numbers, sort&compress, square]{natbib}
 \usepackage{minted}
@@ -34,70 +31,87 @@
     hyperref,
     graphicx,
     listings,
-    pstricks,
     tabularx,
     adjustbox,
     tcolorbox,
-    xltabular,
+    xltabular
 }
-\usepackage{unicode-math} % 加载现代数学字体引擎，支持 Unicode 数学符号和 OpenType 数学字体
-\setmathfont{TeX Gyre Termes Math} % 设置主数学字体，sudo apt install fonts-texgyre-math
-\AtBeginDocument{\renewcommand{\mathbf}{\symbf}} % 重定义 \mathbf 为数学粗体命令，避免回退到文本粗体字体
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\AtBeginDocument{\renewcommand{\mathbf}{\symbf}}
 \allowdisplaybreaks
 \usepackage{ZZU}
-\usepackage{xelatexemoji}
-\usepackage{newunicodechar}
-\newunicodechar{️}{}
 
-\renewcommand{\bibsection}{} % 禁止自动创建 `参考文献` section
-\newcommand{\temp}[1]{\textcolor{blue}{\uline{\color{blue}#1}}}
-\newcommand{\blueurl}[2][blue]{\href{#2}{\temp{#2}}}
+\usepackage{luacode}
+\begin{luacode*}
+    luaotfload.add_fallback("emojifallback", {
+            "[fonts/TwitterColorEmoji.otf]:mode=harf;"
+    })
+\end{luacode*}
 
-\setCJKmainfont{SimHei}[
-    UprightFont = SimHei.ttf,
-    Path = fonts/
-]
-\setCJKsansfont{SimHei}[
-    UprightFont = SimHei.ttf,
-    Path = fonts/
-]
-\setCJKmonofont{LXGWWenKaiMono}[
-    UprightFont = LXGWWenKaiMono-Regular.ttf,
-    Path = fonts/
-]
-\newCJKfontfamily\wuyushengxingkai{wuyushengxingkai}[
-    UprightFont = 吴玉生行楷.ttf,
-    Path = fonts/
-]
 \setmainfont{Times New Roman}[
+    Path = fonts/,
     UprightFont = times.ttf,
     BoldFont = timesbd.ttf,
     ItalicFont = timesi.ttf,
     BoldItalicFont = timesbi.ttf,
-    Path = fonts/
+    RawFeature = {fallback=emojifallback}
 ]
 \setsansfont{Times New Roman}[
+    Path = fonts/,
     UprightFont = times.ttf,
     BoldFont = timesbd.ttf,
     ItalicFont = timesi.ttf,
     BoldItalicFont = timesbi.ttf,
-    Path = fonts/
-]
-\setromanfont{Times New Roman}[
-    UprightFont = times.ttf,
-    BoldFont = timesbd.ttf,
-    ItalicFont = timesi.ttf,
-    BoldItalicFont = timesbi.ttf,
-    Path = fonts/
+    RawFeature = {fallback=emojifallback}
 ]
 \setmonofont{FiraCode}[
-    % RawFeature = {-calt}, % 关闭连字
+    Path = fonts/,
     UprightFont = FiraCode-Regular.ttf,
     BoldFont = FiraCode-Bold.ttf,
     ItalicFont = FiraCode-Italic.ttf,
     BoldItalicFont = FiraCode-BoldItalic.ttf,
-    Path = fonts/
+    RawFeature = {fallback=emojifallback}
 ]
+
+\setCJKmainfont{SimHei}[
+    Path = fonts/,
+    UprightFont = SimHei.ttf,
+    BoldFont = SimHei.ttf,
+    BoldFeatures = {FakeBold=2},
+    ItalicFont = SimHei.ttf,
+    ItalicFeatures = {FakeSlant=0.2},
+    BoldItalicFont = SimHei.ttf,
+    BoldItalicFeatures = {FakeBold=2, FakeSlant=0.2}
+]
+\setCJKsansfont{SimHei}[
+    Path = fonts/,
+    UprightFont = SimHei.ttf,
+    BoldFont = SimHei.ttf,
+    BoldFeatures = {FakeBold=2},
+    ItalicFont = SimHei.ttf,
+    ItalicFeatures = {FakeSlant=0.2},
+    BoldItalicFont = SimHei.ttf,
+    BoldItalicFeatures = {FakeBold=2, FakeSlant=0.2}
+]
+\setCJKmonofont{LXGWWenKaiMono}[
+    Path = fonts/,
+    UprightFont = LXGWWenKaiMono-Regular.ttf,
+    BoldFont = LXGWWenKaiMono-Regular.ttf,
+    BoldFeatures = {FakeBold=2},
+    ItalicFont = LXGWWenKaiMono-Regular.ttf,
+    ItalicFeatures = {FakeSlant=0.2},
+    BoldItalicFont = LXGWWenKaiMono-Regular.ttf,
+    BoldItalicFeatures = {FakeBold=2, FakeSlant=0.2}
+]
+\newCJKfontfamily\wuyushengxingkai{wuyushengxingkai}[
+    Path = fonts/,
+    UprightFont = 吴玉生行楷.otf
+]
+
+\renewcommand{\bibsection}{}
+\newcommand{\temp}[1]{\textcolor{blue}{\uline{\color{blue}#1}}}
+\newcommand{\blueurl}[2][blue]{\href{#2}{\temp{#2}}}
 
 \def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
 \def\env#1{\texttt{\color{blue}\footnotesize #1}}
