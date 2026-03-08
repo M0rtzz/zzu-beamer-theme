@@ -1,4 +1,4 @@
-# 郑州大学Beamer模板
+# 郑州大学 Beamer 模板
 
 ## Build
 
@@ -6,11 +6,7 @@
 make
 ```
 
-## LaTeX+VSCode配置教程
-
-[VSCode_Configuration.md](./docs/VSCode_Configuration.md)
-
-或：
+## LaTeX + VSCode 配置教程
 
 [https://blog.csdn.net/M0rtzz/article/details/136026129](https://blog.csdn.net/M0rtzz/article/details/136026129)
 
@@ -20,36 +16,30 @@ make
 
 ## 模板
 
-由于Overleaf官方免费版的编译时长限制过短，故提供[中国科技云Overleaf模板](https://template-sharelatex.cstcloud.cn/templateDesc/69aaedcb3425935175b35737)，根据链接内项目的文件树进行准备即可。
+由于 Overleaf 官方免费版的编译时长限制过短，故提供[中国科技云 Overleaf 模板](https://template-sharelatex.cstcloud.cn/templateDesc/69ad476b3425935175b3586b)，根据链接内项目的文件树进行准备即可。
 
 ![image-20250711175448412](https://static.m0rtzz.com/images/Year:2025/Month:07/Day:11/17:54:55_image-20250711175448412.png)
-
-如果你注册不了中国科技云账号，可使用[鄙人自行搭建的Overleaf（注册需要`*.edu.cn`邮箱且稳定性及速度不如中国科技云）](https://latex.m0rtzz.com/template/69aaedff64074b641c8b1d66)。
-
-![image-20250617130955023](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:17/13:10:02_image-20250617130955023.png)
 
 ### 一些注意事项
 
 如果报错：
 
-![image-20250614185740855](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:14/18:57:40_image-20250614185740855.png)
+![image-20260308172139740](https://static.m0rtzz.com/images/Year:2026/Month:03/Day:08/17:21:39_image-20260308172139740.png)
 
-请检查编译器是不是`XeLaTeX`：
+请检查编译器是不是 `LuaLaTeX`：
 
-点击左上角的`Menu`：
+点击左上角的 `Menu`：
 
 ![image-20250614180421389](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:14/18:04:21_image-20250614180421389.png)
 
-选择`Compiler`为`XeLaTeX`并设置`Main document`为`slide.tex`：
+选择 `Compiler` 为 `XeLaTeX` 并设置 `Main document` 为 `slide.tex`：
 
-![image-20250614184619421](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:14/18:46:19_image-20250614184619421.png)
+![image-20260308172215694](https://static.m0rtzz.com/images/Year:2026/Month:03/Day:08/17:22:15_image-20260308172215694.png)
 
 编译成功：
 
-![image-20250614185818664](https://static.m0rtzz.com/images/Year:2025/Month:06/Day:14/18:58:18_image-20250614185818664.png)
+![image-20260308172607298](https://static.m0rtzz.com/images/Year:2026/Month:03/Day:08/17:26:07_image-20260308172607298.png)
 
 ## References
 
 [THU-Beamer-Theme](https://github.com/tuna/THU-Beamer-Theme)
-
-[xelatex-emoji](https://github.com/mreq/xelatex-emoji)
