@@ -10,7 +10,7 @@ PDF = slide.pdf
 
 BIB_FILE = refs.bib
 BIB_EXISTS = $(wildcard $(BIB_FILE))
-BIB_NOT_EMPTY = $(shell [ -s $(REFS_BIB) ] && echo true || echo false)
+BIB_NOT_EMPTY = $(shell [ -s $(BIB_FILE) ] && echo true || echo false)
 
 all: $(PDF)
 
