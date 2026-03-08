@@ -41,39 +41,33 @@
 \AtBeginDocument{\renewcommand{\mathbf}{\symbf}}
 \allowdisplaybreaks
 \usepackage{ZZU}
+\usepackage{emoji-ext}
 
-\usepackage{luacode}
-\begin{luacode*}
-    luaotfload.add_fallback("emojifallback", {
-            "[fonts/TwitterColorEmoji.otf]:mode=harf;"
-    })
-\end{luacode*}
-
+\setemojifont{TwitterColorEmoji.otf}[
+    Path = fonts/,
+    Renderer = HarfBuzz
+]
 \setmainfont{Times New Roman}[
     Path = fonts/,
     UprightFont = times.ttf,
     BoldFont = timesbd.ttf,
     ItalicFont = timesi.ttf,
-    BoldItalicFont = timesbi.ttf,
-    RawFeature = {fallback=emojifallback}
+    BoldItalicFont = timesbi.ttf
 ]
 \setsansfont{Times New Roman}[
     Path = fonts/,
     UprightFont = times.ttf,
     BoldFont = timesbd.ttf,
     ItalicFont = timesi.ttf,
-    BoldItalicFont = timesbi.ttf,
-    RawFeature = {fallback=emojifallback}
+    BoldItalicFont = timesbi.ttf
 ]
 \setmonofont{FiraCode}[
     Path = fonts/,
     UprightFont = FiraCode-Regular.ttf,
     BoldFont = FiraCode-Bold.ttf,
     ItalicFont = FiraCode-Italic.ttf,
-    BoldItalicFont = FiraCode-BoldItalic.ttf,
-    RawFeature = {fallback=emojifallback}
+    BoldItalicFont = FiraCode-BoldItalic.ttf
 ]
-
 \setCJKmainfont{SimHei}[
     Path = fonts/,
     UprightFont = SimHei.ttf,
